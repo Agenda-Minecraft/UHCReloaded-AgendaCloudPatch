@@ -1,0 +1,8 @@
+name: UHCReloaded-MEtcdPatch
+version: 1.0.0-SNAPSHOT
+main: cat.kiwi.minecraft.metcd.uhcreloaded.patch.UHCPatch
+load: STARTUP
+authors: [ moeKiwiSAMA ]
+description: Patch for uhcreloaded
+depends: [ UHCReloaded ]
+api-version: 1.12
