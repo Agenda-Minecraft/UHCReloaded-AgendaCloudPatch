@@ -9,7 +9,7 @@ import org.bukkit.event.player.PlayerLoginEvent
 
 class JoinListener : Listener {
     @EventHandler
-    fun onPlayerJoinEvent(e: PlayerJoinEvent) {
+    fun onPlayerJoinEvent(e: PlayerLoginEvent) {
         if (e.player.hasPermission("uhcpatch.bypass")) return
         val instance = UHCPatch.instance
         instance.logger.info("${UHCPatch.uhcPG}, ${UHCPatch.uhcDM}")
