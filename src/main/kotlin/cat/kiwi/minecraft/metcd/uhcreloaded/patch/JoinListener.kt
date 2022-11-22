@@ -12,6 +12,7 @@ class JoinListener : Listener {
     fun onPlayerJoinEvent(e: PlayerJoinEvent) {
         if (e.player.hasPermission("uhcpatch.bypass")) return
         val instance = UHCPatch.instance
+        instance.logger.info("${UHCPatch.uhcPG}, ${UHCPatch.uhcDM}")
         if (!(UHCPatch.uhcDM && UHCPatch.uhcPG)) {
             e.player.kickPlayer(Config.notCompleteMsg)
             instance.logger.info("kicked player ${e.player.name}")

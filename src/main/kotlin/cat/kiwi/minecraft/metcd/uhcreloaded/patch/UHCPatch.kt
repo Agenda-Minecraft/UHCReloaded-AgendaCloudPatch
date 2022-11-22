@@ -23,6 +23,7 @@ class UHCPatch : JavaPlugin() {
         instance = this
 
         Config.readConfig()
+        Bukkit.getServer().pluginManager.registerEvents(JoinListener(), instance);
         object : BukkitRunnable() {
             override fun run() {
                 val chunky = Bukkit.getServer().servicesManager.load(ChunkyAPI::class.java)!!
