@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "cat.kiwi.minecraft"
-version = "1.0-SNAPSHOT"
+version = "1.19.08-SNAPSHOT"
 
 
 repositories {
@@ -31,20 +31,20 @@ dependencies {
     testImplementation(kotlin("test"))
 
     // uhc-reloaded
-    implementation(files("libs/UHCReloaded-1.19.09.jar"))
+    implementation(files("libs/UHCReloaded-1.19.08.jar"))
 
     testImplementation(kotlin("test"))
 }
 
 tasks {
     named<ShadowJar>("shadowJar") {
-        mergeServiceFiles()
         archiveBaseName.set("UHCPatch")
         dependencies {
             exclude(dependency("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT"))
             exclude(dependency("com.github.Agenda-Minecraft:MEtcd:2.0.7"))
             exclude(dependency("de.tr7zw:item-nbt-api-plugin:2.10.0"))
-            exclude(dependency(files("libs/UHCReloaded-1.19.09.jar")))
+            exclude(dependency(files("libs/UHCReloaded-1.19.08.jar")))
+            exclude("*.jar")
         }
     }
 }
