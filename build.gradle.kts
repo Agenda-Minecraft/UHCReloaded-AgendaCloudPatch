@@ -18,6 +18,7 @@ repositories {
     maven(url = "https://repo.extendedclip.com/content/repositories/placeholderapi")
     maven(url = "https://repo.codemc.org/repository/maven-public/")
     maven(url = "https://jitpack.io")
+    maven(url = "https://repo.codemc.io/repository/maven-public/")
 }
 
 dependencies {
@@ -28,10 +29,13 @@ dependencies {
     // minecraft apis
     implementation("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
     implementation("com.github.Agenda-Minecraft:MEtcd:2.0.7")
+    implementation("org.popcraft:chunky-common:1.3.38")
+
     testImplementation(kotlin("test"))
 
     // uhc-reloaded
     implementation(files("libs/UHCReloaded-1.19.08.jar"))
+
 
     testImplementation(kotlin("test"))
 }
@@ -43,6 +47,7 @@ tasks {
             exclude(dependency("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT"))
             exclude(dependency("com.github.Agenda-Minecraft:MEtcd:2.0.7"))
             exclude(dependency("de.tr7zw:item-nbt-api-plugin:2.10.0"))
+            exclude(dependency("org.popcraft:chunky-common:1.3.38"))
             exclude(dependency(files("libs/UHCReloaded-1.19.08.jar")))
             exclude("*.jar")
         }
