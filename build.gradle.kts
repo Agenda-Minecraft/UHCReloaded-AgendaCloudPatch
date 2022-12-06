@@ -28,7 +28,7 @@ dependencies {
 
     // minecraft apis
     implementation("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
-    implementation("com.github.Agenda-Minecraft:MEtcd:2.0.7")
+    implementation("com.github.Agenda-Minecraft:AgendaCloud:3.0.1")
     implementation("org.popcraft:chunky-common:1.3.38")
 
     testImplementation(kotlin("test"))
@@ -45,7 +45,7 @@ tasks {
         archiveBaseName.set("UHCPatch")
         dependencies {
             exclude(dependency("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT"))
-            exclude(dependency("com.github.Agenda-Minecraft:MEtcd:2.0.7"))
+            exclude(dependency("com.github.Agenda-Minecraft:AgendaCloud:3.0.1"))
             exclude(dependency("de.tr7zw:item-nbt-api-plugin:2.10.0"))
             exclude(dependency("org.popcraft:chunky-common:1.3.38"))
             exclude(dependency(files("libs/UHCReloaded-1.19.08.jar")))

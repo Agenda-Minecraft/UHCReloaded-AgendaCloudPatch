@@ -1,8 +1,8 @@
-name: UHCReloaded-MEtcdPatch
+name: UHCReloaded-ACloudPatch
 version: 1.19.08-SNAPSHOT
-main: cat.kiwi.minecraft.metcd.uhcreloaded.patch.UHCPatch
+main: cat.kiwi.minecraft.acloud.uhcreloaded.patch.UHCPatch
 load: STARTUP
 authors: [ moeKiwiSAMA ]
 description: Patch for uhcreloaded
-depends: [ UHCReloaded ]
+depends: [ AgendaCloud, UHCReloaded ]
 api-version: 1.16

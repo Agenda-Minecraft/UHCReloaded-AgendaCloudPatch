@@ -1,3 +1,4 @@
 uhc-world-radius: 500.0
 uhc-death-match-radius: 50.0
 not-complete: "游戏地图暂未预生成完毕"
+supervisor-msg: "游戏地图未生成完毕，但是你被授权进入服务器"

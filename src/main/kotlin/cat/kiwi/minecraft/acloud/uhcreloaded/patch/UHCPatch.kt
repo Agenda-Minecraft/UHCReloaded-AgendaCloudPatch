@@ -1,7 +1,7 @@
-package cat.kiwi.minecraft.metcd.uhcreloaded.patch
+package cat.kiwi.minecraft.acloud.uhcreloaded.patch
 
-import cat.kiwi.minecraft.metcd.MEtcd
-import cat.kiwi.minecraft.metcd.model.GameStatus
+import cat.kiwi.minecraft.acloud.AgendaCloud
+import cat.kiwi.minecraft.acloud.model.GameStatus
 import me.xericker.uhcreloaded.UHCReloaded
 import me.xericker.uhcreloaded.core.game.Game
 import org.bukkit.Bukkit
@@ -23,7 +23,7 @@ class UHCPatch : JavaPlugin() {
         instance = this
 
         Config.readConfig()
-        Bukkit.getServer().pluginManager.registerEvents(JoinListener(), instance);
+        Bukkit.getServer().pluginManager.registerEvents(JoinListener(), this);
         object : BukkitRunnable() {
             override fun run() {
                 val chunky = Bukkit.getServer().servicesManager.load(ChunkyAPI::class.java)!!
@@ -59,16 +59,16 @@ class UHCPatch : JavaPlugin() {
         object : BukkitRunnable() {
             override fun run() {
                 if (!(uhcDM && uhcPG)) {
-                    MEtcd.setGameStatus(GameStatus.LOADING)
+                    AgendaCloud.setGameStatus(GameStatus.LOADING)
                     return
                 }
                 val gameState = UHCReloaded.getGame().gameState
                 logger.info("Reported $gameState")
                 when (gameState) {
-                    Game.GameState.WAITING -> MEtcd.setGameStatus(GameStatus.WAITING)
-                    Game.GameState.STARTING -> MEtcd.setGameStatus(GameStatus.STARTING)
-                    Game.GameState.IN_GAME -> MEtcd.setGameStatus(GameStatus.RUNNING)
-                    Game.GameState.RESTARTING -> MEtcd.setGameStatus(GameStatus.ENDING)
+                    Game.GameState.WAITING -> AgendaCloud.setGameStatus(GameStatus.WAITING)
+                    Game.GameState.STARTING -> AgendaCloud.setGameStatus(GameStatus.STARTING)
+                    Game.GameState.IN_GAME -> AgendaCloud.setGameStatus(GameStatus.RUNNING)
+                    Game.GameState.RESTARTING -> AgendaCloud.setGameStatus(GameStatus.ENDING)
                 }
             }
         }.runTaskTimerAsynchronously(this, 20, 100)
